@@ -11,7 +11,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@goplus/sdk-node": "^1.0.12",
     "@moralisweb3/common-evm-utils": "^2.27.2",
+    "@normalizex/gopluslabs-api": "^1.0.5",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
