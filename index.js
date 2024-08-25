@@ -48,26 +48,7 @@ app.get("/addressActivity", async (req, res) => {
   }
 });
 
-// app.get("/checkMaliciousActivityGP", async (req, res) => {
-//   try {
-//     const { query } = req;
-//     const { address, chainId } = query;
 
-//     if (!address || !chainId) {
-//       return res.status(400).json({ error: "Missing address or chain parameter" });
-//     }
-
-//     const res = await goPlus.addressSecurity(chainId, address, 30);
-    
-//     console.log(res);
-
-
-//     return res.status(200).json(res);
-//   } catch (e) {
-//     console.log(`Something went wrong: ${e}`);
-//     return res.status(400).json({ error: "An error occurred", details: e.message });
-//   }
-// });
 
 Moralis.start({
   apiKey: MORALIS_API_KEY,
