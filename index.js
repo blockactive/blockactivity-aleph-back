@@ -48,6 +48,30 @@ app.get("/addressActivity", async (req, res) => {
   }
 });
 
+app.get("/addressProfile", async (req, res) => {
+  try {
+    const { query } = req;
+    const { address } = query;
+
+    if (!address) {
+      return res.status(400).json({ error: "Missing address parameter" });
+    }
+
+    const response = await Moralis.EvmApi.wallets.getWalletStats({
+      "chain": "0x1",
+      address,
+    });
+    
+    console.log(response.raw);
+
+
+    return res.status(200).json(response.raw);
+  } catch (e) {
+    console.log(`Something went wrong: ${e}`);
+    return res.status(400).json({ error: "An error occurred", details: e.message });
+  }
+});
+
 
 
 Moralis.start({
